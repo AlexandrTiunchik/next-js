@@ -1,0 +1,24 @@
+@import '../../styles/colors.module.scss';
+
+.container {
+  display: flex;
+  background-color: $card-day-color;
+  color: $card-text-color;
+  align-items: center;
+  padding: 10px;
+  min-width: 250px;
+}
+
+.container__image {
+  height: 50px;
+}
+
+.container__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.container__temp {
+  margin-left: 20px;
+}
