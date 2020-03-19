@@ -7,6 +7,7 @@ const Layout = (props) => {
   return (
     <React.Fragment>
       <Head>
+        <meta name="Description" content="Weather"/>
         <title>Weather</title>
       </Head>
 
