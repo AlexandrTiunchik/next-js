@@ -7,8 +7,9 @@ import styles from '../styles/index/index.module.scss';
 import Layout from '../containers/Layout';
 import { fetchWeather } from '../store/weather/actions';
 import { getWeather } from '../store/weather/selectors';
+import { IWeatherPage } from '../interfaces/intex';
 
-function Weather(props) {
+function Weather(props: IWeatherPage) {
   const { fetchWeather, weather } = props;
 
   useEffect(() => {

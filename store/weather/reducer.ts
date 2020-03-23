@@ -1,7 +1,12 @@
 import { SAVE_WEATHER } from './types';
+import { IWeather } from '../../interfaces/intex';
 
-const initialState = {
-  weather: null
+interface IInitialState {
+  weather: IWeather | null;
+};
+
+const initialState: IInitialState = {
+  weather: null,
 }
 
 export default function(state = initialState, action) {
