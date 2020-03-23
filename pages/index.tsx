@@ -1,46 +1,36 @@
-import axios from 'axios';
-
-import { Header, Footer, Logo, Card } from '../components/index';
+import { Header, Footer, Logo, ImageCard } from '../components/index';
 import styles from '../styles/index/index.module.scss';
 import Layout from '../containers/Layout';
 import { IIndexPage } from '../interfaces/intex';
+import { MENU } from '../constants/index';
+import { navigate } from '../helpers/index';
 
 export default function Index(props: IIndexPage) {
-  const { weather } = props;
+  const { navigateTo } = navigate;
 
   return (
     <Layout>
       <div className={styles.index}>
         <Header style={styles.index__header}>
-          <Logo style={styles.index__logo}>Weather</Logo>
+          <Logo style={styles.index__logo}>Menu</Logo>
         </Header>
         <main className={styles.index__main}>
-          
-          {weather.consolidated_weather.map(item => (
-            <Card
-              key={item.id}
-              state={item.weather_state_name}
-              maxTemp={item.max_temp}
-              minTemp={item.min_temp}
-              date={item.applicable_date}
-              image={`/icons/${item.weather_state_abbr}.svg`}
-            />
-          ))}
-
+          <div className={styles['menu-navigation']}>
+            {MENU.map((item, key) => (
+              <ImageCard
+                onClick={navigateTo(`/${item.URL}`)}
+                key={key}
+                img={item.IMAGE}
+                desc={item.desc}
+              />
+            ))}
+          </div>
         </main>
-        <Footer style={styles.index__footer} />
+        <Footer style={styles.index__footer}>
+          <h5>Developed by Alexander Tiunchik</h5>
+          <span>NextJS - 9.3.1</span>
+        </Footer>
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const res = await axios.get('https://www.metaweather.com/api/location/44418/');
-  const weather = res.data;
-
-  return {
-    props: {
-      weather
-    }
-  }
 }
