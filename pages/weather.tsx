@@ -1,13 +1,10 @@
 import { useEffect } from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
 
 import { Header, Footer, Logo, Card } from '../components/index';
 import styles from '../styles/index/index.module.scss';
 import Layout from '../containers/Layout';
-import { fetchWeather } from '../store/weather/actions';
-import { getWeather } from '../store/weather/selectors';
 import { IWeatherPage } from '../interfaces/intex';
+import { WeatherConnect } from '../containers/index';
 
 function Weather(props: IWeatherPage) {
   const { fetchWeather, weather } = props;
@@ -43,12 +40,4 @@ function Weather(props: IWeatherPage) {
   );
 }
 
-const mapStateToPrope = (state) => ({
-  weather: getWeather(state),
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  fetchWeather: () => dispatch(fetchWeather()),
-});
-
-export default connect(mapStateToPrope, mapDispatchToProps)(Weather);
+export default WeatherConnect(Weather);
