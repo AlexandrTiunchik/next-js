@@ -1,2 +1,2 @@
-export const FETCH_WEATHER = 'FETCH_WEATHER';
-export const SAVE_WEATHER = 'SAVE_WEATHER';
+export const FETCH_WEATHER: string = 'FETCH_WEATHER';
+export const SAVE_WEATHER: string = 'SAVE_WEATHER';

@@ -1,6 +1,7 @@
 import styles from './imageCard.module.scss';
+import IImageCard from './IImageCard';
 
-export default function MenuCard(props) {
+export default function MenuCard(props: IImageCard) {
   const { img, desc, onClick } = props;
 
   return (

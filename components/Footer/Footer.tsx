@@ -1,6 +1,7 @@
 import styles from './footer.module.scss';
+import IFooter from './IFooter';
 
-const Footer = (props) => {
+const Footer = (props: IFooter) => {
   const { style, children } = props;
 
   return (

@@ -1,4 +1,8 @@
-const PUBLIC_API = {
+interface IPublicAPI {
+  readonly [index: string]: string;
+}
+
+const PUBLIC_API: IPublicAPI = {
   WEATHER: 'https://www.metaweather.com/api/',
 }
 

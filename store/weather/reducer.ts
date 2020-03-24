@@ -1,11 +1,7 @@
 import { SAVE_WEATHER } from './types';
-import { IWeather } from '../../interfaces/intex';
+import IWeatherInitialState from './IReducer';
 
-interface IInitialState {
-  weather: IWeather | null;
-};
-
-const initialState: IInitialState = {
+const initialState: IWeatherInitialState = {
   weather: null,
 }
 

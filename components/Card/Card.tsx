@@ -1,6 +1,7 @@
 import styles from './card.module.scss';
+import ICard from './ICard';
 
-const Card = (props) => {
+const Card = (props: ICard) => {
   const { image, date, state, maxTemp, minTemp, } = props;
 
   return (
@@ -11,7 +12,7 @@ const Card = (props) => {
         <span>{state}</span>
       </div>
       <div className={styles.container__temp}>
-        <span>{parseInt(maxTemp)} C / {parseInt(minTemp)} C</span>
+        <span>{(~~maxTemp)} C / {(~~minTemp)} C</span>
       </div>
     </div>
   );

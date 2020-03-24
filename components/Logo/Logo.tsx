@@ -1,6 +1,7 @@
 import styles from './logo.module.scss';
+import ILogo from './ILogo';
 
-const Logo = (props) => {
+const Logo = (props: ILogo) => {
   const { children, style } = props;
 
   return (
