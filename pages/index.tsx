@@ -21,7 +21,7 @@ export default function Index(props: IIndexPage) {
                 onClick={navigateTo(`/${item.URL}`)}
                 key={key}
                 img={item.IMAGE}
-                desc={item.desc}
+                desc={item.DESC}
               />
             ))}
           </div>
